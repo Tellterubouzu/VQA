@@ -1,0 +1,13 @@
+ipykernel
+transformers
+torch
+torchvision
+torchaudio
+accelerate
+bitsandbytes
+pandas
+einops
+datasets
+peft
+numpy
+opencv-python
