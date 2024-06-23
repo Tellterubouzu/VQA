@@ -6,5 +6,10 @@ testdataのほぼ半分(47%)はunanswerableが解答データ (6/22 検証済み
 ローカルで動く優れた事前学習済みモデルをtest_dataでFineTuningする
 
 ## 内容
-使ったモデル
-mini-cpm--llama3-v2.5にテストデータからunanswerableデータを150個、それ以外を250個の合計400個ランダムに抽出してQLORAして予測
+#### 使ったモデル
+mini-cpm--llama3-v2.5
+#### Fine Tuning手法
+QLoRA
+
+#### データ
+そのままのtrainデータで学習すると、半分がunanswerableであるというバイアスがかかり、答えられるものにも答えない可能性があるため、テストデータからunanswerableデータを150個、それ以外を250個の合計400個ランダムに抽出してQLORAして予測
