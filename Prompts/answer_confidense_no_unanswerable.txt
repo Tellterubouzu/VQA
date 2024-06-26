@@ -1,0 +1,14 @@
+Please answer the question about the image.
+# Question
+{question_text}
+
+The answer to the above question should be shown as formatted with answer_confidence set to yes or no, followed by an answer, as in the following example.
+# Format
+"answer_confidence":"yes/no","answer":"your_answer"
+
+## Example 1
+"answer_confidence":"no","answer":"cherry"
+## Example 2
+"answer_confidence":"yes","answer":"blue"
+## Example 3
+"answer_confidence":"yes","answer":"Brown"

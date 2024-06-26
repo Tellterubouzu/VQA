@@ -1,0 +1,16 @@
+Please answer the question about the image.
+# Question
+{question_text}
+        
+Please provide a concise response to the question in the answer field, following the format and examples below. If you truly don't know the answer, please use "unanswerable" as shown in Example 4.
+
+## Format
+"answer":your_answer"
+### Example 1
+"answer":"cherry"
+### Example 2
+"answer":"no"
+### Example 3
+"answer":"The broken display"
+### Example 4
+"answer":"unanswerable"

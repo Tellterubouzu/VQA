@@ -1,0 +1,16 @@
+# Instruction
+Your task is to classify the answers into two categories, "answerable" or "unanswerable", indicating whether you can answer a given image/question combination.
+Answers shoud be shown as formatted with answer_confidence set yes or no, and follow the format and examples below.
+
+# Question
+{question_text}
+
+# Format
+"answer_confidence":"yes/no","answer":"your_answer"
+
+## Example 1
+"answer_confidence":"no","answer":"answerable"
+## Example 2
+"answer_confidence":"yes","answer":"answerable"
+## Example 3
+"answer_confidence":"yes","answer":"unanswerable"
