@@ -13,6 +13,11 @@ testdataのほぼ半分(47%)はunanswerableが解答データ (6/22 検証済み
 ## 内容
 #### 使ったモデル
 mini-cpm--llama3-v2.5
+
+候補
+https://huggingface.co/internlm/internlm-xcomposer2d5-7b
+
+
 #### Fine Tuning手法
 QLoRA
 
