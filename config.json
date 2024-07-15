@@ -1,0 +1,23 @@
+{
+    "model_name_or_path": "../models/mini_cpm_raw",
+    "data_path": "data/extract_train_2000.json",
+    "eval_data_path": "data/for_eval_100.json",
+    "output_dir": "../models/fine_tuned_minicpm_test",
+    "cache_dir": "../models/cashe",
+    "max_slice_nums": 16,
+    "model_max_length": 128,
+    "tune_vision": false,
+    "tune_llm": true,
+    "use_lora": true,
+    "lora_r": 64,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "lora_target_modules": "llm\\..*layers\\.\\d+\\.self_attn\\.(q_proj|k_proj|v_proj)",
+    "lora_bias": "none",
+    "q_lora": true,
+    "optim": "adamw_torch",
+    "fp16": true,
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1
+  }
+  
