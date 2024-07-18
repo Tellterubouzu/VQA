@@ -41,24 +41,48 @@ answer confidenceではyes/maybe/noという三択で回答の確信度が示さ
 
 ### Fine-tuning
 ##### Fine-tuning手法
-
+今回扱ったFine-tuning手法はLLM部分に対してのQuantized Loraである。
+元のモデルが8Bほどのパラメータがあり、通常のファインチューニングを行うと40GBほどのメモリを使用しout of memoryとなってしまう。
+よって、訓練時のメモリ不足と時間短縮のためにQLoRaを実施した。
 ##### 二値分類
+Fine-tuningは二つ行い、answerableとunanserableの二つに分類するモデルと通常通り質問に回答するモデルの作成を行った。
 
 ##### 質問応答
 ### Prompt
-
+推論実行時のプロンプトはそれぞれのモデルで以下の通りでFewShotを活用したものとした。
 ##### 二値分類
+```
+# Instruction
+Your task is to classify the answers into two categories, "answerable" or "unanswerable", indicating whether you can answer a given image/question combination.
+Answers shoud be shown as formatted with answer_confidence set yes or no, and follow the format and examples below.
 
+# Question
+{question_text}
+
+# Format
+"answer_confidence":"yes/no","answer":"your_answer"
+
+## Example 1
+"answer_confidence":"no","answer":"answerable"
+## Example 2
+"answer_confidence":"yes","answer":"answerable"
+## Example 3
+"answer_confidence":"yes","answer":"unanswerable"
+```
 ##### 質問応答
+```
+Please answer the question about the image.
+# Question
+{question_text}
 
+The answer to the above question should be shown as formatted with answer_confidence set to yes or no, followed by an answer, as in the following example. 
+# Format
+"answer_confidence":"yes/no","answer":"your_answer"
 
-
-
-
-
-<div style="text-align: right;">
-<h1>見出し1</h1>
-<h2>見出し2</h2>
-<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-<pre>整形済みテキスト整形済みテキスト整形済みテキスト</pre>
-</div>
+## Example 1
+"answer_confidence":"no","answer":"cherry"
+## Example 2
+"answer_confidence":"yes","answer":"blue"
+## Example 3
+"answer_confidence":"yes","answer":"Brown"
+```
