@@ -15,7 +15,7 @@ testdataのほぼ半分(47%)はunanswerableが解答データ (6/22 検証済み
 mini-cpm--llama3-v2.5
 
 候補
-https://huggingface.co/internlm/internlm-xcomposer2d5-7b
+Internvlm2
 
 
 #### Fine Tuning手法
@@ -25,5 +25,5 @@ QLoRA
 ## 画像
 データの前処理として、事前に適応的ヒストグラム平坦化を行い、画像の明るさとヒストグラムを調整しておく
 ## テキストラベル
-そのままのtrainデータで学習すると、半分がunanswerableであるというバイアスがかかり、答えられるものにも答えない可能性があるため、テストデータからunanswerableデータを150個、それ以外を250個の合計400個ランダムに抽出してQLORAして予測
+そのままのtrainデータで学習すると、半分がunanswerableであるというバイアスがかかり、答えられるものにも答えない可能性があるため、テストデータからunanswerableデータを400個、それ以外を1600個の合計200個ランダムに抽出してQLORAして予測
 
